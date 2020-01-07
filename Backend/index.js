@@ -4,7 +4,7 @@ const bodyParser = require('body-parser')
 const cors = require('cors')
 const Reading = require('./models/reading.js')
 
-const hue = require("node-hue-api"), HueApi = hue.HueApi, lightState = hue.lightState;
+
 
 
 app.use(cors())
@@ -62,7 +62,7 @@ app.get('/api/reading', (req, res) => {
     
 
     res.json(reading.map(formatReading))
-    
+
   })
   .catch(error => {
     console.log(error)
