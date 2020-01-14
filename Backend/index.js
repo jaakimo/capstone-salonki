@@ -19,15 +19,6 @@ const displayError = function(err) {
   console.log(err);
 };
 
-const host = "192.168.8.109"
-const user = "FCxPbfSJ6dYW1HpKmYKDkMWl1Bg9NwHM0su0TRVO"
-
-
-const api = new HueApi(host, user);
-
-const state = lightState.create();
-
-
 
 
 
