@@ -2,7 +2,7 @@
 #include <sSense-CCS811.h>
 #include <ArduinoJson.h>
 #include <Wire.h>
-#include <ESP8266WiFi.h> 
+#include <ESP8266WiFi.h>
 #include <ESP8266WiFiMulti.h>
 #include <ESP8266HTTPClient.h>
 
@@ -14,7 +14,7 @@
 #define I2C_ADDR_BME 0x76 // define the BME sensor i2c address
 #define I2C_ADDR_CCS 0x5B // define the CCS sensor i2c address
 
-#define IP "https://capstonesalonki.herokuapp.com/api/reading"
+#define IP "http://capstonesalonki.herokuapp.com/api/reading"
 
 
 
@@ -25,7 +25,7 @@ CCS811 ccs;
 
 
 // Your wifi ssid and password. Change as needed.
-const char* ssid = "mokkula_257561"; const char* password = "XXX"; 
+const char* ssid = "mokkula_257561"; const char* password = "XXX";
 
 
 
@@ -36,31 +36,31 @@ void setup()
 
 {
 
-
-  Wire.begin();
-  
-  // connect to wifi
-  Serial.printf("Connecting to %s ", ssid);   
-  WiFi.begin(ssid, password); 
-
-  while (WiFi.status() != WL_CONNECTED) 
-  {     
-    delay(1500); 
-    Serial.print("."); 
-  } 
-  Serial.println(" connected"); 
-
-
-
-
   Serial.begin(SERIAL_SPEED);
-  delay(5000);
+  Wire.begin();
+
+
+  // connect to wifi
+  Serial.printf("Connecting to %s ", ssid);
+  WiFi.begin(ssid, password);
+
+  while (WiFi.status() != WL_CONNECTED)
+  {
+    delay(500);
+    Serial.print(".");
+  }
+  Serial.println("WIFI connected!");
+
+
+
+  
+  delay(3000);
   if (!bme.begin(I2C_ADDR_BME))
   {
     Serial.println("Could not find bme sensor!");
     while (1);
   }
-  if(!ccs.begin(uint8_t(I2C_ADDR_CCS), uint8_t(CCS811_WAKE_PIN), driveMode_1sec)){
+  if (!ccs.begin(uint8_t(I2C_ADDR_CCS), uint8_t(CCS811_WAKE_PIN), driveMode_1sec)) {
     Serial.println("Could not find ccs sensor!");
     while (1);
   }
@@ -86,9 +86,9 @@ void loop()
 
 
   int gx, gy, gz, ga, gb;         // raw values
-  
+
   // read raw measurements from device
-  
+
   gx = bme.readTemperature();
   gy = bme.readPressure();
   gz = bme.readHumidity();
@@ -118,33 +118,33 @@ void loop()
     ccs.printError();
   }
 
-  delay(2000);
+  delay(5000);
 
 
-  
-    
 
-  
-  // display values as JSON format
-  String json = "{\"sensor\":\"sensor\",\"gx\":\"" + String(gx) + "\",\"gy\":\"" + String(gy) + "\",\"gz\":\"" + String(gz)+ "\"}";
+
+
+
+  // display xyz values as JSON format
+  String json = "{\"sensor\":\"sensor\",\"gx\":\"" + String(gx) + "\",\"gy\":\"" + String(gy) + "\",\"gz\":\"" + String(gz) + "\"}";
 
   // send the JSON data as a HTTP POST request
   HTTPClient http;
 
-    Serial.println("[HTTP] begin...");
+  Serial.println("[HTTP] begin...");
 
-    http.begin(IP);
-    http.addHeader("Content-Type", "application/json");
+  http.begin(IP);
+  http.addHeader("Content-Type", "application/json");
 
-    int httpcode = http.POST(json);
+  int httpcode = http.POST(json);
 
-    if (httpcode == HTTP_CODE_OK)
-    {
-      Serial.println("Transmission OK");
-    }else{
-      Serial.println("Transmission failure!");
-      Serial.println(httpcode);
-    }
+  if (httpcode == HTTP_CODE_OK)
+  {
+    Serial.println("Transmission OK");
+  } else {
+    Serial.println("Transmission failure!");
+    Serial.println(httpcode);
+  }
 
   http.end();
 
