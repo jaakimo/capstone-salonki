@@ -93,5 +93,5 @@ app.post('/api/reading', (request, response) => {
 const PORT = process.env.PORT || 3001
 const server = app.listen(PORT, () => {
     const host = server.address().address;
-  console.log(`Server running on port ${PORT} and address: `+host)
+    console.log(`Server running on port ${PORT} and address: `+host)
 })

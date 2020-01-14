@@ -5,10 +5,14 @@ if ( process.env.NODE_ENV !== 'production' ) {
     require('dotenv').config()
   }
 
-  
-const url = 'mongodb+srv://fullstack:XXX@exmplcluster-c4xch.mongodb.net/iot_home_automation'
 
-mongoose.connect(url)
+  // Do not push Password to Github !!!!!!!!
+const url = 'mongodb+srv://capstonesalonki:XXX@cluster0-0uoxl.mongodb.net/salonki'
+
+
+
+
+mongoose.connect(url, {useNewUrlParser: true})
 
 
 
