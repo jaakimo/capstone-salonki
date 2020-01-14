@@ -67,7 +67,7 @@ app.get('/api/reading', (req, res) => {
 // save data from sensor to cloud database
 app.post('/api/reading', (request, response) => {
   const body = request.body
-
+  console.log(body)
   
   const reading = {
       sensor: body.sensor,
@@ -75,12 +75,12 @@ app.post('/api/reading', (request, response) => {
       gy: body.gy,
       gz: body.gz
   }
-
+  console.log(reading.gx)
   Reading
     .findOneAndUpdate({sensor: 'sensor'}, reading, {new: true})
     .then(savedReading => {
-      response.json(formatReading(savedReading))
-  
+      response.json(savedReading)
+      console.log(savedReading)
   })
 
 })

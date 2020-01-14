@@ -26,7 +26,7 @@ const readingSchema = new mongoose.Schema({
   })
 
   
-const Reading = mongoose.model('sensor_datas', readingSchema);
+const Reading = mongoose.model('sensors', readingSchema);
   
 
 
