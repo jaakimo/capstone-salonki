@@ -11,7 +11,7 @@
 
 
 #define SERIAL_SPEED 19200
-#define I2C_ADDR_BME 0x76 // define the BME sensor i2c address
+#define I2C_ADDR_BME 0x77 // define the BME sensor i2c address
 #define I2C_ADDR_CCS 0x5B // define the CCS sensor i2c address
 
 #define IP "http://capstonesalonki.herokuapp.com/api/reading"

@@ -12,7 +12,7 @@ const url = 'mongodb+srv://capstonesalonki:XXX@cluster0-0uoxl.mongodb.net/salonk
 
 
 
-mongoose.connect(url, {useNewUrlParser: true})
+mongoose.connect(url, {useNewUrlParser: true, useUnifiedTopology:true})
 
 
 
