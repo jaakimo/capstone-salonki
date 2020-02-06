@@ -28,7 +28,9 @@ const formatReading = (reading) => {
         sensor: reading.sensor,    
         gx: reading.gx,
         gy: reading.gy,
-        gz: reading.gz
+        gz: reading.gz,
+        ga: reading.ga,
+        gb: reading.gb
       
   }
 }

@@ -22,7 +22,9 @@ const readingSchema = new mongoose.Schema({
   sensor: String,    
   gx: String,
   gy: String,
-  gz: String
+  gz: String,
+  ga: String,
+  gb: String
   })
 
   
