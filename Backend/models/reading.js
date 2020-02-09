@@ -7,7 +7,7 @@ if ( process.env.NODE_ENV !== 'production' ) {
 
 
   // Do not push Password to Github !!!!!!!!
-const url = 'mongodb+srv://capstonesalonki:Salasana1)@cluster0-0uoxl.mongodb.net/salonki'
+const url = 'mongodb+srv://capstonesalonki:XXX@cluster0-0uoxl.mongodb.net/salonki'
 
 
 
