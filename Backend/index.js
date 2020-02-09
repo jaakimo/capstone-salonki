@@ -75,7 +75,10 @@ app.post('/api/reading', (request, response) => {
       sensor: body.sensor,
       gx: body.gx,
       gy: body.gy,
-      gz: body.gz
+      gz: body.gz,
+      ga: body.ga,
+      gb: body.gb
+
   }
   console.log(reading.gx)
   Reading
