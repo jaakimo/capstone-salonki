@@ -87,7 +87,6 @@ app.post('/api/reading', (request, response) => {
     .findOneAndUpdate({sensor: 'sensor'}, reading, {new: true})
     .then(savedReading => {
       response.json(savedReading)
-      console.log("savedReading")
       console.log(savedReading)
   })
 
