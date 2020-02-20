@@ -126,7 +126,7 @@ void loop()
 
 
   // display xyz values as JSON format
-  String json = "{\"sensor\":\"sensor\",\"gx\":\"" + String(gx) + "\",\"gy\":\"" + String(gy) + "\",\"gz\":\"" + String(gz) + "\"}";
+  String json = "{\"sensor\":\"sensor\",\"gx\":\"" + String(gx) + "\",\"gy\":\"" + String(gy) + "\",\"gz\":\"" + String(gz) + "\",\"ga\":\"" + String(ga) + "\",\"gb\":\"" + String(gb) + "\"}";
   Serial.println(json);
   // send the JSON data as a HTTP POST request
   HTTPClient http;
