@@ -7,7 +7,7 @@ if ( process.env.NODE_ENV !== 'production' ) {
 
 
   // Do not push Password to Github !!!!!!!!
-const url = 'mongodb+srv://capstonesalonki:XXX@cluster0-0uoxl.mongodb.net/salonki'
+const url = 'mongodb+srv://readonly:Salasana1%29@cluster0-0uoxl.mongodb.net/salonki_test'
 
 
 
@@ -24,7 +24,9 @@ const readingSchema = new mongoose.Schema({
   gy: String,
   gz: String,
   ga: String,
-  gb: String
+  gb: String,
+  lat: String,
+  lng: String
   })
 
   

@@ -30,10 +30,13 @@ const formatReading = (reading) => {
         gy: reading.gy,
         gz: reading.gz,
         ga: reading.ga,
-        gb: reading.gb
+        gb: reading.gb,
+        lat: reading.lat,
+        lng: reading.lng
       
   }
 }
+
 
 
 
@@ -75,13 +78,16 @@ app.post('/api/reading', (request, response) => {
       sensor: body.sensor,
       gx: body.gx,
       gy: body.gy,
-      gz: body.gz
+      gz: body.gz,
+      ga: body.ga,
+      gb: body.gb,
   }
   console.log(reading.gx)
   Reading
     .findOneAndUpdate({sensor: 'sensor'}, reading, {new: true})
     .then(savedReading => {
       response.json(savedReading)
+      console.log("savedReading")
       console.log(savedReading)
   })
 
