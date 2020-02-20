@@ -24,7 +24,9 @@ const readingSchema = new mongoose.Schema({
   gy: String,
   gz: String,
   ga: String,
-  gb: String
+  gb: String,
+  lat: String,
+  lng: String
   })
 
   

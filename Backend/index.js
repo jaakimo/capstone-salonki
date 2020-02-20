@@ -30,7 +30,9 @@ const formatReading = (reading) => {
         gy: reading.gy,
         gz: reading.gz,
         ga: reading.ga,
-        gb: reading.gb
+        gb: reading.gb,
+        lat: reading.lat,
+        lng: reading.lng
       
   }
 }
