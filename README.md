@@ -16,8 +16,8 @@ Projektin backend toteutuksessa käytettiin seuraavia tekniikoita:
 * Node
 * ExpressJS
 * MongoDB Atlas
-* Heroku
 * Arduino (C, C++)
+* Heroku
 
 Näistä kaksi viimeisintä ovat pilvipalveluita, joiden kanssa hoituivat datan tallennus ja backend serverin pystytys. Haluttaessa nämä palvelut voidaan vaihtaa.
 
