@@ -1,6 +1,6 @@
 # Capstone-salonki
 
-*Capstone projektin koodit: Backend*
+*Capstone projektin koodit: Backend ja sensori*
 
 ## Projektin esittely
 
@@ -15,8 +15,8 @@ Projektin backend toteutuksessa käytettiin seuraavia tekniikoita:
 * Javascript
 * Node
 * ExpressJS
-* MongoDB Atlas
 * Arduino (C, C++)
+* MongoDB Atlas
 * Heroku
 
 Näistä kaksi viimeisintä ovat pilvipalveluita, joiden kanssa hoituivat datan tallennus ja backend serverin pystytys. Haluttaessa nämä palvelut voidaan vaihtaa.
@@ -38,7 +38,7 @@ Projektin ajamiseen tarvitaan seuraavat ohjelmat:
  - [NodeJS](https://nodejs.org/)
  - [(GIT)](https://git-scm.com/) suositeltava, muttei pakollinen
  
-### Projektin ajaminen (NPM)
+### Backend:n ajaminen (NPM)
 Projektin ajamiseen käytetään npm paketinhallitsijaa (engl. package manager). NodeJS asennus asentaa myös npm:n asennuksen.
 
 Siirry komentokehotteessa oikeaan kansioon, jonka jälkeen seuraavat komennot asentavat ja ajavat backendin kehitysympäristössä 
