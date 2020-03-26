@@ -6,7 +6,7 @@
 
 Tällä projektin toteutuksella haettiin ratkaisuja ilmanlaadun mittaamiseen, datan keruun eri mahdollisuuksiin, ja tutkittiin miten havaittua dataa pystyttäisiin käyttämään hyödyksi Salon Kaupungin kehittämiseksi. 
 
-Tämä projekti oli osa Salon kaupungin SmartCity
+Tämä projekti oli osa Turun Yliopiston Capstone Project -kurssia ja Salon Älykäs Kaupunki hanketta. Yhteistyötä tehtiin sekä Salon Kaupungin, että Lounea Oy:n kanssa.
 
 ## Käytetyt tekniikat
 
